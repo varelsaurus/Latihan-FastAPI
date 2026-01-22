@@ -14,8 +14,8 @@ import pickle
 import pandas as pd
 # 2. Create the app object
 app = FastAPI()
-pickle_in = open("classifier.pkl","rb")
-classifier=pickle.load(pickle_in)
+pickle_in = open("classifier.pkl","rb") #Membuka file pkl
+classifier=pickle.load(pickle_in) #Memasukkan file pkl ke dalam variabel 
 
 # 3. Index route, opens automatically on http://127.0.0.1:8000
 @app.get('/')
@@ -30,13 +30,13 @@ def get_name(name: str):
 
 # 3. Expose the prediction functionality, make a prediction from the passed
 #    JSON data and return the predicted Bank Note with the confidence
-@app.post('/predict')
-def predict_banknote(data:BankNote):
-    data = data.dict()
-    variance=data['variance']
-    skewness=data['skewness']
-    curtosis=data['curtosis']
-    entropy=data['entropy']
+@app.post('/predict') #Membuat endpoint /predict dengan post request
+def predict_banknote(data:BankNote): #Membuat variabel data dengan tipe data BankNote
+    data = data.dict() #Mengubah data menjadi dictionary
+    variance=data['variance'] #Mengambil data variance
+    skewness=data['skewness'] #Mengambil data skewness
+    curtosis=data['curtosis'] #Mengambil data curtosis
+    entropy=data['entropy'] #Mengambil data entropy
    # print(classifier.predict([[variance,skewness,curtosis,entropy]]))
     prediction = classifier.predict([[variance,skewness,curtosis,entropy]])
     if(prediction[0]>0.5):

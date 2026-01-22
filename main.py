@@ -7,7 +7,7 @@ Created on Wed Nov 18 13:07:51 2020
 #pip install fastapi uvicorn
 
 # 1. Library imports
-import uvicorn ##ASGI
+import uvicorn #Server ASGi berkinerja tinggi untuk menjalankan aplikasi web py
 from fastapi import FastAPI
 
 # 2. Create the app object
