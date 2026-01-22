@@ -6,7 +6,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 
 # Load data
-df = pd.read_csv('BankNote_Authentication.csv')
+df = pd.read_csv('data/BankNote_Authentication.csv')
 
 # Split features and target
 X = df.iloc[:, :-1]
