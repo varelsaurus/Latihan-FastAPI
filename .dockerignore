@@ -1,0 +1,11 @@
+venv/
+__pycache__/
+*.pyc
+.git/
+.gitignore
+*.ipynb
+*.csv
+train_model.py
+ModelTraining.ipynb
+README.md
+.env
